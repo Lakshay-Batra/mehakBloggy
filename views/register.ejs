@@ -1,0 +1,63 @@
+<%- include('partials/header2') %>
+<div class="container mt-5">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="bg-danger text-center ml-5 mr-5" style="border-radius: 10px;">
+            <h5 class="text-light"><% if(failureMessage) { %>
+              <%= failureMessage %> 
+            <% } %> </h5>
+          </div>
+          <!-- Makes POST request to /register route -->
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" name="firstName" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="firstName">Last Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" name="lastName" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" name="username" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password <span class="text-danger">*</span></label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="text-right">
+              <button type="submit" class="btn btn-dark">Register</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-google" href="#" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-facebook" href="#" role="button">
+            <i class="fab fa-facebook"></i>
+            Sign Up with Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer2') %>

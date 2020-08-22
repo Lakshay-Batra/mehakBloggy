@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+<div class="text-center" style="padding: 0 25%;">
+        <h4 style="margin: 0; opacity: 0.8; background-color:rgb(213, 239, 243); border-radius:  0 0 25px 25px;">Welcome <span class="text-primary" style="font-weight: bold;"><%= name %> !</span></h4>
+</div> 
+<h1>Home</h1>
+<p><%= homeStartingContent %> </p>
+<% posts.forEach(post => { %>
+    <h3><%= post.title %>&nbsp;&nbsp;<span class="text-muted" style="font-size: medium;">  ~ by <%= post.name %> | <%= post.date %> | <%= post.time %> <span></h3>
+    <% const myTruncatedString = post.content.substring(0,100) + "..."; %> 
+    <p><%= myTruncatedString %> <a href="post/<%= post._id %>">Read more</a> </p>
+<% });  %>
+<%- include("partials/footer") %>

@@ -1,0 +1,16 @@
+<%- include("partials/header") %> 
+<h1>My Blogs</h1>
+<br>
+<%if(posts.length != 0) { %> 
+    <% posts.forEach(post => { %>
+    <h3><%= post.title %></h3>
+    <% const myTruncatedString = post.content.substring(0,100) + "..."; %> 
+    <p><%= myTruncatedString %> <a href="mypost/<%= post._id %>">Read more</a> </p>
+    <% }); %>
+<% } else { %>
+    <h5>No Blogs Yet, Click the + button on the bottom right corner to right one.</h5>
+<% } %>
+<form action="/compose" method="get">
+    <button type="submit" class="btn-primary compose-btn">+</button>
+</form>
+<%- include("partials/footer") %>
